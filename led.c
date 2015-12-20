@@ -23,7 +23,11 @@ void led_on(void)
 {
     if (!enabled)
         led_init();
+#ifdef RPI0
+    gpio_clear(STATUS_LED);
+#else
     gpio_set(STATUS_LED);
+#endif
     on = 1;
 }
 
@@ -31,7 +35,11 @@ void led_off(void)
 {
     if (!enabled)
         led_init();
+#ifdef RPI0
+    gpio_set(STATUS_LED);
+#else
     gpio_clear(STATUS_LED);
+#endif
     on = 0;
 }
 
