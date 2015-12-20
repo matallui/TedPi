@@ -24,7 +24,7 @@ ASOPTS = --warn -mfpu=$(FPU) -mfloat-abi=hard -march=$(ARCH) #-mcpu=cortex-a7 -g
 CCOPTS = -Wall -O2 -mfpu=$(FPU) -mfloat-abi=hard -march=$(ARCH) -mtune=$(CPU) -D$(RPI) -fno-builtin -nostdlib #-nostartfiles -g
 #LDLIBS = -Llib -lgcc
 LDSCRIPT = rpi.x
-LDOPTS = -T $(LDSCRIPT) -Llib/armv6-m #--verbose
+LDOPTS = -T $(LDSCRIPT) --verbose
 
 COBJS = kernel.o \
 		cstartup.o \
