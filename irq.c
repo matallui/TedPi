@@ -1,4 +1,3 @@
-//#include <stdio.h>
 #include "clib.h"
 #include "kernel.h"
 #include "systimer.h"

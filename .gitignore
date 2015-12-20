@@ -1,0 +1,4 @@
+*.o
+kernel.img
+kernel.elf
+debug/

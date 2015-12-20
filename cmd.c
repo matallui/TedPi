@@ -1,6 +1,3 @@
-//#include <stdio.h>
-//#include <stdlib.h>
-//#include <string.h>
 #include "clib.h"
 #include "twi.h"
 #include "cmd.h"
