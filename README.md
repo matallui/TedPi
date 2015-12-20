@@ -15,6 +15,7 @@ This is purely for educational purposes and it might contain bugs (most likely),
 * redefine command-line interface (make it easy to add new commands)
 * complete IRQ driver
 * add interrupt support to other drivers
+* add GUI support (mailbox interface)
 * add MMU driver (virtual memory)
 * define processes (1 core only)
 * ???
