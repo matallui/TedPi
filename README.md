@@ -21,4 +21,4 @@ This is purely for educational purposes and it might contain bugs (most likely),
 
 ### Contributors ###
 
-* matallui [matallui@gmail.com](mailto:matallui@gmail.com)
+* [matallui@gmail.com](mailto:matallui@gmail.com)
