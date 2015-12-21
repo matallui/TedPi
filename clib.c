@@ -30,17 +30,17 @@ char *gets(char *s)
 {
 
     int end = 0;
-    int i = 0, j;
-    char *p;
-    char buffer[STR_MAX];
+    int i = 0;
+    char *ps = s;
+    //char buffer[STR_MAX];
 
     while (i < (STR_MAX-1) && !end) {
-        buffer[i] = uart_getc(); 
-        switch (buffer[i]) {
+        ps[i] = uart_getc(); 
+        switch (ps[i]) {
             case '\r':
             case '\n':
                 uart_putc('\n');
-                buffer[i++] = '\n';
+                ps[i++] = '\0';
                 end = 1;
                 break;
             case '\b':
@@ -58,20 +58,14 @@ char *gets(char *s)
                 uart_putc('\a');
                 break;
             default:
-                if (i == 255) {
+                if (i == STR_MAX-1) {
                     uart_putc('\a');
                 } else {
-                    uart_putc(buffer[i]);
+                    uart_putc(ps[i]);
                     i++;
                 }
         }
     }
-    
-    p = s;
-    for (j = 0; j < i; j++)
-        *p++ = buffer[j];
-
-    *p = '\0';
 
     return s;
 }
@@ -356,6 +350,8 @@ int sscanf(char *str, char *fmt, ...)
                 default:
                     break;
             }
+        } else {
+            str++;
         }
     }
     va_end(list);
@@ -512,6 +508,9 @@ long strtol(char *s, char **endp, int base)
     long prev;
     long res;
     int i;
+
+    if (!s)
+        return -1;
 
     ovf = 0;
     neg = 0;

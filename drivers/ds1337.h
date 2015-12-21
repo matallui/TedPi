@@ -4,9 +4,12 @@
 typedef unsigned char uint8_t;
 
 struct ds1337_time {
-        uint8_t seconds;
-        uint8_t minutes;
-        uint8_t hours;
+        unsigned int    year;
+        unsigned int    month;
+        unsigned int    day;
+        unsigned int    hours;
+        unsigned int    minutes;
+        unsigned int    seconds;
 };
 
 void ds1337_init(void);
